@@ -1,0 +1,56 @@
+type: object
+description: История изменений товара
+properties:
+  date:
+    description: День
+    type: string
+    format: date-time
+  items:
+    description: Товаров в наличии
+    type: integer
+    format: int64
+  itemsWithSales:
+    description: Товаров с продажами
+    type: integer
+    format: int64
+  brands:
+    description: Кол-во брендов
+    type: integer
+    format: int32
+  brandWithSales:
+    description: Кол-во брендов с продажами
+    type: integer
+    format: int32
+  seller:
+    description: Кол-во продавцов
+    type: integer
+    format: int32
+  sellerWithSales:
+    description: Кол-во продавцов с продажами
+    type: integer
+    format: int32
+  revenue:
+    description: Выручка
+    type: number
+    format: double
+  avgPrice:
+    description: Средняя цена
+    type: number
+    format: double
+  avgSalePrice:
+    description: Средняя цена продажи
+    type: number
+    format: double
+  comments:
+    description: Среднее кол-во отзывов
+    type: number
+    format: double
+  rating:
+    description: Средний рейтинг товара
+    type: number
+    format: double
+
+
+
+
+

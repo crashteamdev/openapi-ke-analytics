@@ -1,0 +1,43 @@
+type: object
+description: Тренды категории
+properties:
+  startDate:
+    description: Дата начала расчетов (от)
+    type: string
+    format: date-time
+  endData:
+    description: Дата окончания расчетов (до)
+    type: string
+    format: date-time
+  sales:
+    description: Продажи
+    type: integer
+    format: int64
+  revenue:
+    description: Выручка
+    type: integer
+    format: int64
+  goods:
+    description: Кол-во товаров
+    type: integer
+    format: int64
+  goodsWithSales:
+    description: Товаров с продажами
+    type: integer
+    format: int64
+  brands:
+    description: Кол-во брендов
+    type: integer
+    format: int32
+  sellers:
+    description: Кол-во продавцов
+    type: integer
+    format: int32
+  revenueOnGoods:
+    description: Выручка на товар
+    type: integer
+    format: int64
+
+
+
+
