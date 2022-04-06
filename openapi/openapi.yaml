@@ -20,8 +20,8 @@ servers:
 security:
   - bearer: []
 paths:
-  '/product/history/{id}':
-    $ref: './paths/product-history@{id}.yaml'
+  '/product/history/{id}/{skuId}':
+    $ref: './paths/product-history@{id}{skuId}.yaml'
   '/category/seller/{id}':
     $ref: './paths/category-seller@{id}.yaml'
   '/category/price/segmentation/{id}':

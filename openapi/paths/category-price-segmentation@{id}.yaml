@@ -17,13 +17,13 @@ get:
             type: array
             items:
               - $ref: '../components/schemas/CategoryPriceSegmentation.yaml'
-        headers:
-          Pagination-Total:
-            $ref: ../components/headers/Pagination-Total.yaml
-          Pagination-Limit:
-            $ref: ../components/headers/Pagination-Limit.yaml
-          Pagination-Offset:
-            $ref: ../components/headers/Pagination-Offset.yaml
+      headers:
+        Pagination-Total:
+          $ref: ../components/headers/Pagination-Total.yaml
+        Pagination-Limit:
+          $ref: ../components/headers/Pagination-Limit.yaml
+        Pagination-Offset:
+          $ref: ../components/headers/Pagination-Offset.yaml
     '400':
       $ref: '../components/responses/BadRequest.yaml'
     '401':
