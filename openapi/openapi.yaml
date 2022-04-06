@@ -4,7 +4,7 @@ info:
   title: CrashTeam KazanExpress Analytics API
   description:
     $ref: './docs/api.md'
-  termsOfService: http://crashteam.dev
+  termsOfService: http://marketdb.ru/terms-of-use/
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
