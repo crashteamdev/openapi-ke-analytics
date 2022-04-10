@@ -1,0 +1,50 @@
+type: object
+description: История изменений товара
+properties:
+  title:
+    description: Название продавца
+    type: string
+  sellerGraph:
+    type: array
+    items:
+      type: integer
+      format: int32
+  rating:
+    description: Рейтинг продавца
+    type: integer
+  sales:
+    description: Продажи
+    type: integer
+    format: int64
+  revenue:
+    description: Выручка
+    type: integer
+    format: int64
+  avgSalePrice:
+    description: Средняя цена
+    type: number
+    format: double
+  goods:
+    description: Всего товаров
+    type: integer
+    format: int32
+  goodsWithSales:
+    description: Всего товаров с продажами
+    type: integer
+    format: int64
+  goodsWithSalesPercentage:
+    description: Процент товаров с продажами
+    type: integer
+    minimum: 1
+    maximum: 100
+  avgGoodsSales:
+    description: Среднее число продаж на один товар
+    type: integer
+    format: int32
+  avgGoodsSalesOnly:
+    description: Среднее число продаж на один товар с продажами
+    type: integer
+    format: int32
+
+
+

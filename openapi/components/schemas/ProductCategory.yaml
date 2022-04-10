@@ -1,0 +1,7 @@
+type: object
+description: Категория товара
+properties:
+  categoryId:
+    $ref: './CategoryId.yaml'
+  title:
+    type: string

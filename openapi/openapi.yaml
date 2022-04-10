@@ -1,0 +1,34 @@
+openapi: 3.0.0
+info:
+  version: 0.0.1
+  title: CrashTeam KazanExpress Analytics API
+  description:
+    $ref: './docs/api.md'
+  termsOfService: http://marketdb.ru/terms-of-use/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: 'https://{subdomain}.dev.crashteam/ke/{version}'
+    variables:
+      subdomain:
+        default: api
+      version:
+        enum:
+          - v1
+        default: v1
+security:
+  - bearer: []
+paths:
+  '/product/history/{id}/{skuId}':
+    $ref: './paths/product-history@{id}{skuId}.yaml'
+  '/category/seller/{id}':
+    $ref: './paths/category-seller@{id}.yaml'
+  '/category/price/segmentation/{id}':
+    $ref: './paths/category-price-segmentation@{id}.yaml'
+  '/category/trends/{id}':
+    $ref: './paths/category-trends@{id}.yaml'
+components:
+  securitySchemes:
+    bearer:
+      $ref: './components/security-schemes/Bearer.yaml'

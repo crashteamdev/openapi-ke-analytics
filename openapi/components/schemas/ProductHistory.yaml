@@ -1,0 +1,52 @@
+type: object
+description: История изменений товара
+properties:
+  productId:
+    $ref: './ProductId.yaml'
+  skuId:
+    $ref: './ProductSkuId.yaml'
+  title:
+    description: Название товара
+    type: string
+  price:
+    $ref: './ProductPrice.yaml'
+  date:
+    type: string
+    format: date-time
+  category:
+    $ref: './ProductCategory.yaml'
+  brand:
+    type: string
+  sales:
+    description: Кол-во продаж
+    type: integer
+    format: int32
+  revenue:
+    description: Выручка
+    type: number
+    format: double
+  lostRevenue:
+    description: Упущенная выручка
+    type: number
+    format: double
+  potential:
+    type: number
+    format: double
+  daysInStock:
+    description: Дней в наличии
+    type: integer
+    format: int32
+  daysWithSales:
+    description: Дней с продажами
+    type: integer
+    format: int32
+  rate:
+    description: Рейтинг товара
+    type: integer
+  photoKey:
+    description: Ключ фотографии
+    type: string
+
+
+
+
