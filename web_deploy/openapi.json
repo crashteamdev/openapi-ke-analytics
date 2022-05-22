@@ -1,0 +1,729 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "0.0.1",
+    "title": "CrashTeam KazanExpress Analytics API",
+    "description": "CrashTeam Dev KazanExpress Analytics API\n",
+    "termsOfService": "http://marketdb.ru/terms-of-use/",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://{subdomain}.dev.crashteam/ke/{version}",
+      "variables": {
+        "subdomain": {
+          "default": "api"
+        },
+        "version": {
+          "enum": [
+            "v1"
+          ],
+          "default": "v1"
+        }
+      }
+    }
+  ],
+  "security": [
+    {
+      "bearer": []
+    }
+  ],
+  "paths": {
+    "/product/history/{id}/{skuId}": {
+      "get": {
+        "summary": "Получить историю товара",
+        "operationId": "productHistory",
+        "tags": [
+          "product"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/requestId"
+          },
+          {
+            "$ref": "#/components/parameters/productResourceId"
+          },
+          {
+            "$ref": "#/components/parameters/productSkuResourceId"
+          },
+          {
+            "$ref": "#/components/parameters/collectionLimit"
+          },
+          {
+            "$ref": "#/components/parameters/collectionOffset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Получена история изменения товара",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "$ref": "#/components/schemas/ProductHistory"
+                    }
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Pagination-Total": {
+                "$ref": "#/components/headers/Pagination-Total"
+              },
+              "Pagination-Limit": {
+                "$ref": "#/components/headers/Pagination-Limit"
+              },
+              "Pagination-Offset": {
+                "$ref": "#/components/headers/Pagination-Offset"
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "История товара не найдена"
+          }
+        }
+      }
+    },
+    "/category/seller/{id}": {
+      "get": {
+        "summary": "Агрегированные данные по продавцам в категории",
+        "operationId": "categorySellerAggregate",
+        "tags": [
+          "category"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/requestId"
+          },
+          {
+            "$ref": "#/components/parameters/categoryResourceId"
+          },
+          {
+            "$ref": "#/components/parameters/collectionLimit"
+          },
+          {
+            "$ref": "#/components/parameters/collectionOffset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Получены данные в категории по продавцам",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "$ref": "#/components/schemas/CategorySellerSummary"
+                    }
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Pagination-Total": {
+                "$ref": "#/components/headers/Pagination-Total"
+              },
+              "Pagination-Limit": {
+                "$ref": "#/components/headers/Pagination-Limit"
+              },
+              "Pagination-Offset": {
+                "$ref": "#/components/headers/Pagination-Offset"
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "Данные по категории не найдены"
+          }
+        }
+      }
+    },
+    "/category/price/segmentation/{id}": {
+      "get": {
+        "summary": "Ценовая сегментация",
+        "operationId": "categoryPriceSegmentation",
+        "tags": [
+          "category"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/requestId"
+          },
+          {
+            "$ref": "#/components/parameters/categoryResourceId"
+          },
+          {
+            "$ref": "#/components/parameters/collectionLimit"
+          },
+          {
+            "$ref": "#/components/parameters/collectionOffset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Получены данные ценовой сегментации по категории",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "$ref": "#/components/schemas/CategoryPriceSegmentation"
+                    }
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Pagination-Total": {
+                "$ref": "#/components/headers/Pagination-Total"
+              },
+              "Pagination-Limit": {
+                "$ref": "#/components/headers/Pagination-Limit"
+              },
+              "Pagination-Offset": {
+                "$ref": "#/components/headers/Pagination-Offset"
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "Данные по категории не найдены"
+          }
+        }
+      }
+    },
+    "/category/trends/{id}": {
+      "get": {
+        "summary": "Тренды и сезонность",
+        "operationId": "categoryTrends",
+        "tags": [
+          "category"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/requestId"
+          },
+          {
+            "$ref": "#/components/parameters/categoryResourceId"
+          },
+          {
+            "$ref": "#/components/parameters/collectionLimit"
+          },
+          {
+            "$ref": "#/components/parameters/collectionOffset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Получены данные трендов в категории",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "$ref": "#/components/schemas/CategoryTrends"
+                    }
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Pagination-Total": {
+                "$ref": "#/components/headers/Pagination-Total"
+              },
+              "Pagination-Limit": {
+                "$ref": "#/components/headers/Pagination-Limit"
+              },
+              "Pagination-Offset": {
+                "$ref": "#/components/headers/Pagination-Offset"
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "Данные по категории не найдены"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "description": "Для аутентификации вызовов мы используем [JWT](https://jwt.io). Cоответствующий ключ передается в заголовке.\n```shell\n  Authorization: Bearer {TOKENIZATION|PRIVATE_JWT}\n```\n",
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "parameters": {
+      "requestId": {
+        "name": "X-Request-ID",
+        "in": "header",
+        "description": "Уникальный идентификатор запроса к системе",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 32,
+          "example": "RQID-Z08G3EFE5DZ429VVO755BM19D51"
+        }
+      },
+      "productResourceId": {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/ProductId"
+        }
+      },
+      "productSkuResourceId": {
+        "name": "skuId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/ProductId"
+        }
+      },
+      "collectionLimit": {
+        "name": "limit",
+        "in": "query",
+        "description": "The collection items limit.",
+        "schema": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000
+        }
+      },
+      "collectionOffset": {
+        "name": "offset",
+        "in": "query",
+        "description": "The collection items offset.",
+        "schema": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "categoryResourceId": {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/CategoryId"
+        }
+      }
+    },
+    "schemas": {
+      "ProductId": {
+        "description": "Идентификатор продукта",
+        "type": "integer",
+        "format": "int64",
+        "readOnly": true
+      },
+      "ProductSkuId": {
+        "description": "Идентификатор sku продукта",
+        "type": "integer",
+        "format": "int64",
+        "readOnly": true
+      },
+      "ProductPrice": {
+        "type": "number",
+        "format": "double",
+        "description": "Цена товара"
+      },
+      "CategoryId": {
+        "description": "Идентификатор категории",
+        "type": "integer",
+        "format": "int64",
+        "readOnly": true
+      },
+      "ProductCategory": {
+        "type": "object",
+        "description": "Категория товара",
+        "properties": {
+          "categoryId": {
+            "$ref": "#/components/schemas/CategoryId"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "ProductHistory": {
+        "type": "object",
+        "description": "История изменений товара",
+        "properties": {
+          "productId": {
+            "$ref": "#/components/schemas/ProductId"
+          },
+          "skuId": {
+            "$ref": "#/components/schemas/ProductSkuId"
+          },
+          "title": {
+            "description": "Название товара",
+            "type": "string"
+          },
+          "price": {
+            "$ref": "#/components/schemas/ProductPrice"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "category": {
+            "$ref": "#/components/schemas/ProductCategory"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "sales": {
+            "description": "Кол-во продаж",
+            "type": "integer",
+            "format": "int32"
+          },
+          "revenue": {
+            "description": "Выручка",
+            "type": "number",
+            "format": "double"
+          },
+          "lostRevenue": {
+            "description": "Упущенная выручка",
+            "type": "number",
+            "format": "double"
+          },
+          "potential": {
+            "type": "number",
+            "format": "double"
+          },
+          "daysInStock": {
+            "description": "Дней в наличии",
+            "type": "integer",
+            "format": "int32"
+          },
+          "daysWithSales": {
+            "description": "Дней с продажами",
+            "type": "integer",
+            "format": "int32"
+          },
+          "rate": {
+            "description": "Рейтинг товара",
+            "type": "integer"
+          },
+          "photoKey": {
+            "description": "Ключ фотографии",
+            "type": "string"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "minimum": 100,
+            "maximum": 600,
+            "description": "The HTTP status code."
+          },
+          "error": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "description": "A URI reference [[RFC3986](https://tools.ietf.org/html/rfc3986)] that identifies the problem type. It should provide human-readable documentation for the problem type. When this member is not present, its value is assumed to be \"about:blank\"."
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem type. It SHOULD NOT change from occurrence to occurrence of the problem, except for purposes of localization."
+          }
+        }
+      },
+      "CategorySellerSummary": {
+        "type": "object",
+        "description": "История изменений товара",
+        "properties": {
+          "title": {
+            "description": "Название продавца",
+            "type": "string"
+          },
+          "sellerGraph": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "rating": {
+            "description": "Рейтинг продавца",
+            "type": "integer"
+          },
+          "sales": {
+            "description": "Продажи",
+            "type": "integer",
+            "format": "int64"
+          },
+          "revenue": {
+            "description": "Выручка",
+            "type": "integer",
+            "format": "int64"
+          },
+          "avgSalePrice": {
+            "description": "Средняя цена",
+            "type": "number",
+            "format": "double"
+          },
+          "goods": {
+            "description": "Всего товаров",
+            "type": "integer",
+            "format": "int32"
+          },
+          "goodsWithSales": {
+            "description": "Всего товаров с продажами",
+            "type": "integer",
+            "format": "int64"
+          },
+          "goodsWithSalesPercentage": {
+            "description": "Процент товаров с продажами",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          },
+          "avgGoodsSales": {
+            "description": "Среднее число продаж на один товар",
+            "type": "integer",
+            "format": "int32"
+          },
+          "avgGoodsSalesOnly": {
+            "description": "Среднее число продаж на один товар с продажами",
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CategoryPriceSegmentation": {
+        "type": "object",
+        "description": "История изменений товара",
+        "properties": {
+          "date": {
+            "description": "День",
+            "type": "string",
+            "format": "date-time"
+          },
+          "items": {
+            "description": "Товаров в наличии",
+            "type": "integer",
+            "format": "int64"
+          },
+          "itemsWithSales": {
+            "description": "Товаров с продажами",
+            "type": "integer",
+            "format": "int64"
+          },
+          "brands": {
+            "description": "Кол-во брендов",
+            "type": "integer",
+            "format": "int32"
+          },
+          "brandWithSales": {
+            "description": "Кол-во брендов с продажами",
+            "type": "integer",
+            "format": "int32"
+          },
+          "seller": {
+            "description": "Кол-во продавцов",
+            "type": "integer",
+            "format": "int32"
+          },
+          "sellerWithSales": {
+            "description": "Кол-во продавцов с продажами",
+            "type": "integer",
+            "format": "int32"
+          },
+          "revenue": {
+            "description": "Выручка",
+            "type": "number",
+            "format": "double"
+          },
+          "avgPrice": {
+            "description": "Средняя цена",
+            "type": "number",
+            "format": "double"
+          },
+          "avgSalePrice": {
+            "description": "Средняя цена продажи",
+            "type": "number",
+            "format": "double"
+          },
+          "comments": {
+            "description": "Среднее кол-во отзывов",
+            "type": "number",
+            "format": "double"
+          },
+          "rating": {
+            "description": "Средний рейтинг товара",
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "CategoryTrends": {
+        "type": "object",
+        "description": "Тренды категории",
+        "properties": {
+          "startDate": {
+            "description": "Дата начала расчетов (от)",
+            "type": "string",
+            "format": "date-time"
+          },
+          "endData": {
+            "description": "Дата окончания расчетов (до)",
+            "type": "string",
+            "format": "date-time"
+          },
+          "sales": {
+            "description": "Продажи",
+            "type": "integer",
+            "format": "int64"
+          },
+          "revenue": {
+            "description": "Выручка",
+            "type": "integer",
+            "format": "int64"
+          },
+          "goods": {
+            "description": "Кол-во товаров",
+            "type": "integer",
+            "format": "int64"
+          },
+          "goodsWithSales": {
+            "description": "Товаров с продажами",
+            "type": "integer",
+            "format": "int64"
+          },
+          "brands": {
+            "description": "Кол-во брендов",
+            "type": "integer",
+            "format": "int32"
+          },
+          "sellers": {
+            "description": "Кол-во продавцов",
+            "type": "integer",
+            "format": "int32"
+          },
+          "revenueOnGoods": {
+            "description": "Выручка на товар",
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "headers": {
+      "Pagination-Total": {
+        "description": "Total items count.",
+        "schema": {
+          "type": "integer"
+        }
+      },
+      "Pagination-Limit": {
+        "description": "Items per page limit.",
+        "schema": {
+          "type": "integer"
+        }
+      },
+      "Pagination-Offset": {
+        "description": "Pagination offset.",
+        "schema": {
+          "type": "integer"
+        }
+      }
+    },
+    "responses": {
+      "BadRequest": {
+        "description": "Переданы ошибочные данные",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "Ошибка в переданных данных",
+              "type": "object",
+              "required": [
+                "code"
+              ],
+              "properties": {
+                "code": {
+                  "type": "string",
+                  "enum": [
+                    "invalidRequest"
+                  ]
+                },
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Unauthorized": {
+        "description": "Несанкционированный доступ, использовались неверные учетные данные.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "Access forbidden.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    }
+  }
+}
