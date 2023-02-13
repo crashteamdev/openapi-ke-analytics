@@ -2,9 +2,9 @@
   "name": "openapi-ke-analytics",
   "version": "0.0.1",
   "dependencies": {
-    "@redocly/openapi-cli": "^1.0.0-beta.89",
+    "@redocly/openapi-cli": "^1.0.0-beta.95",
     "json-merge-patch": "^1.0.0",
-    "redoc-cli": "^0.13.9"
+    "redoc-cli": "^0.13.20"
   },
   "scripts": {
     "start": "openapi preview-docs",

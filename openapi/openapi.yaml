@@ -9,25 +9,28 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-  - url: 'https://{subdomain}.dev.crashteam/ke/{version}'
+  - url: 'https://{subdomain}.marketdb.ru/{version}'
     variables:
       subdomain:
         default: api
       version:
         enum:
           - v1
-        default: v1
+          - v2
+        default: v2
 security:
   - bearer: []
 paths:
-  '/product/history/{id}/{skuId}':
-    $ref: './paths/product-history@{id}{skuId}.yaml'
-  '/category/seller/{id}':
-    $ref: './paths/category-seller@{id}.yaml'
-  '/category/price/segmentation/{id}':
-    $ref: './paths/category-price-segmentation@{id}.yaml'
-  '/category/trends/{id}':
-    $ref: './paths/category-trends@{id}.yaml'
+#  '/product/history/{id}/{skuId}':
+#    $ref: './paths/product-history@{id}{skuId}.yaml'
+#  '/category/seller/{id}':
+#    $ref: './paths/category-seller@{id}.yaml'
+#  '/category/price/segmentation/{id}':
+#    $ref: './paths/category-price-segmentation@{id}.yaml'
+#  '/category/trends/{id}':
+#    $ref: './paths/category-trends@{id}.yaml'
+  '/category/average-price':
+    $ref: './paths/category-average-price.yaml'
 components:
   securitySchemes:
     bearer:
