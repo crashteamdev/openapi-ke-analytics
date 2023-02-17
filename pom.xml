@@ -160,6 +160,7 @@
                                     <generatorName>spring</generatorName>
                                     <configOptions>
                                         <dateLibrary>java8</dateLibrary>
+                                        <reactive>true</reactive>
                                     </configOptions>
                                     <apiPackage>${default.package}.api</apiPackage>
                                     <modelPackage>${default.package}.model</modelPackage>
