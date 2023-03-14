@@ -1,4 +1,4 @@
-name: id
+name: productId
 in: path
 required: true
 schema:

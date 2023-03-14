@@ -2,4 +2,4 @@ name: skuId
 in: path
 required: true
 schema:
-  $ref: '../schemas/ProductId.yaml'
+  $ref: '../schemas/ProductSkuId.yaml'
