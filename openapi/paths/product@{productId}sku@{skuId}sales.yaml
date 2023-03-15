@@ -19,7 +19,7 @@ get:
           schema:
             type: array
             items:
-              - $ref: '../components/schemas/ProductSkuHistory.yaml'
+              $ref: '../components/schemas/ProductSkuHistory.yaml'
       headers:
         Pagination-Total:
           $ref: ../components/headers/Pagination-Total.yaml
