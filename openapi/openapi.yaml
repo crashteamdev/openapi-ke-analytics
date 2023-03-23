@@ -33,6 +33,8 @@ paths:
     $ref: './paths/category-average-price.yaml'
   '/product/{productId}/sku/{skuId}/sales':
     $ref: './paths/product@{productId}sku@{skuId}sales.yaml'
+  '/product/sales/':
+    $ref: './paths/product-sales.yaml'
 components:
   securitySchemes:
     bearer:

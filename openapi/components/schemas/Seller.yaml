@@ -1,0 +1,9 @@
+type: object
+description: Данные продавца
+properties:
+  title:
+    type: string
+  link:
+    type: string
+  accountId:
+    type: string
