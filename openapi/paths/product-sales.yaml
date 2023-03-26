@@ -18,7 +18,7 @@ get:
               type: object
               properties:
                 productId:
-                  type: string
+                  $ref: '../components/schemas/ProductId.yaml'
                 salesAmount:
                   type: number
                   format: double
