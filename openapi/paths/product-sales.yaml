@@ -23,7 +23,8 @@ get:
                   type: number
                   format: double
                 orderAmount:
-                  type: string
+                  type: integer
+                  format: int64
                 dailyOrder:
                   type: number
                   format: double
