@@ -6,4 +6,5 @@ properties:
   link:
     type: string
   accountId:
-    type: string
+    type: integer
+    format: int64
