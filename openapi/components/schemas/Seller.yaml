@@ -1,5 +1,5 @@
 type: object
-description: Данные продавца
+description: Данные магазина продавца
 properties:
   title:
     type: string
