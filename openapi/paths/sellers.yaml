@@ -13,7 +13,7 @@ get:
           schema:
             type: array
             items:
-              - $ref: '../components/schemas/Seller.yaml'
+              $ref: '../components/schemas/Seller.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
     '401':
