@@ -1,0 +1,11 @@
+type: object
+description: Уникальная ссылка на магазин продавца
+example: mimaximum
+properties:
+  title:
+    type: string
+  link:
+    type: string
+  accountId:
+    type: integer
+    format: int64

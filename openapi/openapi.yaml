@@ -37,6 +37,8 @@ paths:
     $ref: './paths/product-sales.yaml'
   '/seller/link':
     $ref: './paths/sellers.yaml'
+  '/report/seller/{sellerLink}':
+    $ref: './paths/report-seller@{sellerLink}.yaml'
 components:
   securitySchemes:
     bearer:
