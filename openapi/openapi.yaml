@@ -39,6 +39,8 @@ paths:
     $ref: './paths/sellers.yaml'
   '/report/seller/{sellerLink}':
     $ref: './paths/report-seller@{sellerLink}.yaml'
+  '/report/category':
+    $ref: './paths/report-category.yaml'
   '/report/{reportId}':
     $ref: './paths/report-download@{reportId}.yaml'
   '/report/state/{jobId}':
