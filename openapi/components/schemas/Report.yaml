@@ -6,16 +6,15 @@ properties:
   jobId:
     $ref: './JobId.yaml'
   status:
-    description: Название товара
     type: string
   interval:
     type: integer
     format: int32
   reportType:
     type: string
-    format: date-time
   createdAt:
-    $ref: './ProductCategory.yaml'
+    type: string
+    format: date-time
   sellerLink:
     type: string
   categoryId:
