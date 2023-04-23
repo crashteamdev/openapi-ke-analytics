@@ -45,7 +45,7 @@ paths:
     $ref: './paths/report-download@{reportId}.yaml'
   '/report/state/{jobId}':
     $ref: './paths/report-state@{jobId}.yaml'
-  '/reports/':
+  '/reports':
     $ref: './paths/reports.yaml'
 components:
   securitySchemes:
