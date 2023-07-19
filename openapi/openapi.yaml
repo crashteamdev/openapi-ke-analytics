@@ -29,8 +29,6 @@ paths:
 #    $ref: './paths/category-price-segmentation@{id}.yaml'
 #  '/category/trends/{id}':
 #    $ref: './paths/category-trends@{id}.yaml'
-  '/category/average-price':
-    $ref: './paths/category-average-price.yaml'
   '/product/{productId}/sku/{skuId}/sales':
     $ref: './paths/product@{productId}sku@{skuId}sales.yaml'
   '/product/sales':
@@ -47,6 +45,8 @@ paths:
     $ref: './paths/report-state@{jobId}.yaml'
   '/reports':
     $ref: './paths/reports.yaml'
+  '/category/{categoryId}/overall-info':
+    $ref: './paths/category@{categoryId}overall-info.yaml'
 components:
   securitySchemes:
     apiKey:
