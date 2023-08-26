@@ -35,6 +35,8 @@ paths:
     $ref: './paths/product-sales.yaml'
   '/seller/link':
     $ref: './paths/sellers.yaml'
+  '/seller/{sellerLink}/overall-info':
+    $ref: './paths/seller@{sellerLink}overall-info.yaml'
   '/report/seller/{sellerLink}':
     $ref: './paths/report-seller@{sellerLink}.yaml'
   '/report/category':
