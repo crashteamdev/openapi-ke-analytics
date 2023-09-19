@@ -49,6 +49,8 @@ paths:
     $ref: './paths/reports.yaml'
   '/category/{categoryId}/overall-info':
     $ref: './paths/category@{categoryId}overall-info.yaml'
+  '/promo-code':
+    $ref: './paths/promocode.yaml'
 components:
   securitySchemes:
     apiKey:

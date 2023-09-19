@@ -1,0 +1,10 @@
+type: object
+allOf:
+  - $ref: ./PromoCodeContext.yaml
+  - type: object
+    required:
+      - days
+    properties:
+      days:
+        type: integer
+        minimum: 1
