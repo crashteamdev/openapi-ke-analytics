@@ -7,4 +7,5 @@ allOf:
     properties:
       days:
         type: integer
+        description: Бесплатные дни
         minimum: 1

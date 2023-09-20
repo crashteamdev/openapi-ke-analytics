@@ -3,10 +3,10 @@ discriminator:
   propertyName: type
   mapping:
     discount: ./DiscountPromoCode.yaml
-    free-period: ./FreeDaysPromoCode.yaml
+    additional-time: ./AdditionalTimePromoCode.yaml
 properties:
   type:
     type: string
     enum:
       - discount
-      - free-period
+      - additional-time
