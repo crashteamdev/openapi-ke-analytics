@@ -9,6 +9,7 @@ required:
 properties:
   code:
     type: string
+    readOnly: true
   prefix:
     type: string
     description: Префикс для промокода
