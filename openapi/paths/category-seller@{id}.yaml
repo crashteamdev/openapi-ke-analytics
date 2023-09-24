@@ -1,6 +1,8 @@
 get:
   summary: Агрегированные данные по продавцам в категории
   operationId: categorySellerAggregate
+  security:
+    - apiKey: []
   tags:
     - category
   parameters:

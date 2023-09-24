@@ -3,6 +3,8 @@ post:
   description: |
     Создание промокода (только для администраторов)
   operationId: createPromoCode
+  security:
+    - bearer: []
   tags:
     - promo
   parameters:

@@ -1,6 +1,8 @@
 get:
   summary: Получить список всех отчетов
   operationId: getReports
+  security:
+    - apiKey: []
   tags:
     - report
   parameters:

@@ -1,6 +1,8 @@
 get:
   summary: Сгенерировать отчет по магазину
   operationId: getReportBySeller
+  security:
+    - apiKey: []
   tags:
     - report
   parameters:

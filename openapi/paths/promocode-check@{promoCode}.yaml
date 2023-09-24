@@ -1,6 +1,8 @@
 get:
   summary: Проверить промокод
   operationId: checkPromoCode
+  security:
+    - bearer: []
   tags:
     - promo
   parameters:

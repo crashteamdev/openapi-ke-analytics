@@ -1,6 +1,8 @@
 get:
   summary: Скачать файл по идентификатору отчета
   operationId: getReportByReportId
+  security:
+    - apiKey: []
   tags:
     - report
   parameters:

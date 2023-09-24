@@ -1,6 +1,8 @@
 get:
   summary: Получить историю товара
   operationId: productHistory
+  security:
+    - apiKey: []
   tags:
     - product
   parameters:

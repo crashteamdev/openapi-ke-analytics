@@ -1,6 +1,8 @@
 get:
   summary: Сгенерировать отчет по категории
   operationId: getReportByCategory
+  security:
+    - apiKey: []
   tags:
     - report
   parameters:

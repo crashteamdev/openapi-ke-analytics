@@ -1,6 +1,8 @@
 get:
   summary: Ценовая сегментация
   operationId: categoryPriceSegmentation
+  security:
+    - apiKey: []
   tags:
     - category
   parameters:

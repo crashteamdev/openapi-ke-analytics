@@ -20,6 +20,7 @@ servers:
         default: v2
 security:
   - apiKey: []
+  - bearer: []
 paths:
 #  '/product/history/{id}/{skuId}':
 #    $ref: './paths/product-history@{id}{skuId}.yaml'
@@ -57,3 +58,5 @@ components:
   securitySchemes:
     apiKey:
       $ref: './components/security-schemes/ApiKey.yaml'
+    bearer:
+      $ref: './components/security-schemes/Bearer.yaml'
