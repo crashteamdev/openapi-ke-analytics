@@ -6,7 +6,7 @@ get:
   tags:
     - report
   parameters:
-    - $ref: '../components/parameters/categoryIdPath.yaml'
+    - $ref: '../components/parameters/categoryResourceId.yaml'
     - $ref: '../components/parameters/period.yaml'
     - $ref: '../components/parameters/idempotenceKey.yaml'
   responses:
