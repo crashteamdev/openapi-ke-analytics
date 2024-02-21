@@ -56,6 +56,8 @@ paths:
     $ref: './paths/promocode.yaml'
   '/promo-code/{promoCode}/check':
     $ref: './paths/promocode-check@{promoCode}.yaml'
+  '/subscription/giveaway':
+    $ref: './paths/demo-subscription.yaml'
 components:
   securitySchemes:
     apiKey:
