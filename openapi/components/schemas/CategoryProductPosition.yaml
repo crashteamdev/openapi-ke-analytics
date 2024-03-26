@@ -1,0 +1,7 @@
+type: object
+properties:
+  date:
+    $ref: './Date.yaml'
+  position:
+    type: integer
+    description: Позиция товара в категории

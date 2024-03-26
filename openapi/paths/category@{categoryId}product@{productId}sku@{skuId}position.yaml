@@ -1,0 +1,40 @@
+get:
+  summary: Позиция товара в категории
+  operationId: categoryProductPosition
+  security:
+    - apiKey: []
+  tags:
+    - product
+  parameters:
+    - $ref: '../components/parameters/requestId.yaml'
+    - $ref: '../components/parameters/apiKey.yaml'
+    - $ref: '../components/parameters/categoryResourceId.yaml'
+    - $ref: '../components/parameters/productResourceId.yaml'
+    - $ref: '../components/parameters/productSkuResourceId.yaml'
+    - $ref: '../components/parameters/fromDate.yaml'
+    - $ref: '../components/parameters/toDate.yaml'
+  responses:
+    '200':
+      description: Получены данные о позициях товара в категории
+      content:
+        application/json:
+          schema:
+            properties:
+              categoryId:
+                $ref: '../components/schemas/CategoryId.yaml'
+              productId:
+                $ref: '../components/schemas/ProductId.yaml'
+              skuId:
+                $ref: '../components/schemas/ProductSkuId.yaml'
+              positions:
+                type: array
+                items:
+                  - $ref: '../components/schemas/CategoryProductPosition.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '403':
+      $ref: ../components/responses/Forbidden.yaml
+    '404':
+      description: Данные по продукту не найдены
