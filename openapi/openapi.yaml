@@ -54,6 +54,8 @@ paths:
     $ref: './paths/reports.yaml'
   '/category/{categoryId}/overall-info':
     $ref: './paths/category@{categoryId}overall-info.yaml'
+  '/category/{categoryId}/trending-products':
+    $ref: './paths/category@{categoryId}trending-products.yaml'
   '/promo-code':
     $ref: './paths/promocode.yaml'
   '/promo-code/{promoCode}/check':
