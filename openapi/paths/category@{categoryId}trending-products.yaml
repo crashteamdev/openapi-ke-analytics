@@ -1,0 +1,28 @@
+get:
+  summary: Трендовые товары в категории
+  operationId: getTrendingCategoryProducts
+  security:
+    - apiKey: []
+  tags:
+    - category
+  parameters:
+    - $ref: '../components/parameters/requestId.yaml'
+    - $ref: '../components/parameters/apiKey.yaml'
+    - $ref: '../components/parameters/categoryResourceId.yaml'
+  responses:
+    '200':
+      description: Получены трендовые товары в категории
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../components/schemas/TrendingProduct.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '403':
+      $ref: ../components/responses/Forbidden.yaml
+    '404':
+      description: Данные по категории не найдены

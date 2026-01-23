@@ -1,0 +1,12 @@
+type: object
+description: Трендовый товар в категории
+properties:
+  productId:
+    description: Идентификатор товара
+    type: integer
+    format: int64
+  name:
+    description: Название товара
+    type: string
+  photoKey:
+    $ref: './KePhotoKey.yaml'
